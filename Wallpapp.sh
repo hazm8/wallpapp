@@ -155,13 +155,13 @@ apiGET() {
   wallp_dl "$img_list"
 }
 
-mkdir -p ~/Pictures/WallpappDIR/ || >&2
+mkdir -p ~/Pictures/Wallpapp/ || >&2
 
 wallp_dl() {
   local dl_list="$1"
   while read -r img; do
     echo "Downloading: $img"
-    wget -nc --content-on-error --tries=1 -P ~/Pictures/WallpappDIR/"$SEARCHTERM" "$img" || {
+    wget -nc --content-on-error --tries=1 -P ~/Pictures/Wallpapp/"$SEARCHTERM" "$img" || {
           printf "Failed to download: %s\n" "$img" >&2
           continue
       }
