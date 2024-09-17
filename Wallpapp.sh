@@ -23,9 +23,9 @@ APIKEY=""
 splash_screen() {
 
   toilet "Wallpapp"
-  printf "##################################\n"
-  printf "###  Basic Bash by Hazm8  ###\n"
-  printf "##################################\n\n"
+  printf "###################################\n"
+  printf "###     Basic Bash by Hazm8     ###\n"
+  printf "###################################\n\n"
   printf "What would you like to search?\n "
   printf "___________________________\n"
   printf "\n"
