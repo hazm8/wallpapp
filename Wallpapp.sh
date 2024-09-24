@@ -16,9 +16,8 @@ SORTBY="relevance"
 ## Must be set in order to set XFilter to NSFW
 ## Format must be in the following format:
 
-## APIKEY="apikey=xyz321"
 
-APIKEY=""
+
 
 splash_screen() {
 
@@ -130,7 +129,7 @@ set_options() {
   if [[ "$FORCE_RES" == 1 ]]; then
     apiSearch_url="$apiSearch_url&atleast=1920x1080&ratios=landscape"
   fi
-  if [ -z "$APIKEY" ]; then
+  if [[ -n "$APIKEY" ]]; then
     apiSearch_url="$apiSearch_url&$APIKEY"
   fi
 
@@ -161,7 +160,7 @@ wallp_dl() {
   local dl_list="$1"
   while read -r img; do
     echo "Downloading: $img"
-    wget -nc --content-on-error --tries=1 -P ~/Pictures/WallpappDIR/"$SEARCHTERM" "$img" || {
+    wget -nc --content-on-error --tries=1 -P ~/Pictures/wallpaper/"$SEARCHTERM" "$img" || {
           printf "Failed to download: %s\n" "$img" >&2
           continue
       }
